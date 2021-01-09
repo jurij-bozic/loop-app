@@ -1,0 +1,12 @@
+
+#frame {
+
+    padding: 2vw !important;
+    background-color: #80808080;
+}
+
+#content {
+    background-color: white;
+    border-radius: 3px;
+    padding: 1vw;
+}   
