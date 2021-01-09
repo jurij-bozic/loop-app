@@ -14,7 +14,6 @@ export class MainViewComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userDataService.getData());
-    this.data = this.userDataService.getData();
   }
 
 
