@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { Data } from '../model/data';
-// import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-input-user',
@@ -14,7 +13,7 @@ export class InputUserComponent implements OnInit {
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit(): void {
-    this.data = this.userDataService.getData();
+     this.data = this.userDataService.getData();
   }
 
 }

@@ -5,24 +5,37 @@
 <br><br>
 
 
-<div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-      <mat-label>Select</mat-label>
-      <mat-select>
-        <mat-option value="option">Option</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-      <mat-label>Textarea</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </div>
+
+    <!-- <mat-form-field appearance="standard">
+      <label>Input</label>
+      <input placeholder="placeholder" matInput>
+      <mat-autocomplete autoActiveFirstOption>
+        <mat-option *ngFor="let data of data | async" [value]="data">
+          {{data.name}}: {{data.email}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+
+
+    <!-- <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+     -->
+
+
+
   
     
 
