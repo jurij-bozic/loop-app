@@ -1,0 +1,64 @@
+.previous-message-card {
+    margin: 2vw;
+    padding: 2vw;
+    border: 1px solid rgb(223, 223, 223);
+    border-left: 6px solid rgb(67, 27, 112);
+    border-radius: 4px;
+}
+
+.previous-sender {
+    font-weight: bold;
+}
+
+.previous-addressees {
+    color: grey;
+    margin-bottom: 1vw;
+}
+
+p {
+    text-align: justify;
+}
+
+#comment-section {
+    margin: 2vw;
+    padding: 1vw; 
+}
+
+.basic-form-container {
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 4px;
+    margin: 2vw;
+    padding: 1vw;
+}
+
+.comment-input {
+    border: none;
+    padding: 1vw;
+    width: 90%;
+    font-size: 2vw;
+}
+
+#share-btn {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width: 20vw;
+    height: 4vw;
+    border-radius: 20px;
+    background-color: rgb(21, 165, 184);
+    color: white;
+    font-size: 2vw;
+    border: none;
+}
+
+#share-btn:hover {
+    background-color:rgb(15, 72, 80);
+}
+#share-btn:active {
+    border: solid 4px rgb(255, 255, 255);
+}
+
+.btn-container {
+    text-align: right;
+    padding-bottom: 2vw;
+}
+

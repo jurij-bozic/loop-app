@@ -1,38 +1,28 @@
-<div>Mock data display:</div>
-<div *ngFor="let data of data">
-    <div>{{data.name}}: {{data.email}}</div>
+<div>
+  <input id="subject-field" type="text" placeholder="Enter subject">
 </div>
-<br><br>
 
-
-
-    <!-- <mat-form-field appearance="standard">
-      <label>Input</label>
-      <input placeholder="placeholder" matInput>
-      <mat-autocomplete autoActiveFirstOption>
-        <mat-option *ngFor="let data of data | async" [value]="data">
-          {{data.name}}: {{data.email}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field> -->
-
-
-    <!-- <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input type="text"
-               placeholder="Pick one"
+    <form id="users" class="user-form">
+      <mat-form-field class="user-form" appearance="none">
+        <mat-label>Share email with your teammates</mat-label>
+        <input id="users-id"
+               type="text"
+               placeholder="Type name or email"
                aria-label="Number"
                matInput
                [formControl]="myControl"
                [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option}}
+          <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
+          <span class="dropdown-list"> {{user.name}} </span> 
+          <span class="dropdown-list dropdown-list-email"> {{user.email}} </span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
     </form>
-     -->
+
+    <br><br>
+    
 
 
 

@@ -1,0 +1,52 @@
+.user-form {
+    width: 100%;
+}
+
+#users {
+    border-top: 1px solid rgb(223, 223, 223);
+    border-bottom: 1px solid rgb(223, 223, 223);
+    padding-top: 1.5vw;
+}
+
+
+#subject-field {
+    font-size: large;
+    color: rgba(19, 19, 19, 0.664);
+    font-weight: bold;
+    padding: 2vw;
+    border: none;
+    width: 95%;
+}
+
+mat-form-field {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+mat-label {
+    color: grey;
+    font-size: 2vw;
+}
+
+.mat-option {
+    height: 6vw !important;
+    margin-bottom: 1vw;
+    margin-bottom: 1vw;
+
+}
+
+.dropdown-list {
+    display: block;
+    margin-top: -12px;
+    margin-bottom: -15px;
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+.dropdown-list-email {
+    margin-top: -3.8vw !important;
+    color: grey;
+    font-size: small;
+    font-weight: normal;
+}
+

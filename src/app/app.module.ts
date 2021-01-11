@@ -7,20 +7,28 @@ import { MainViewComponent } from './main-view/main-view.component';
 import { InputUserComponent } from './input-user/input-user.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CommentViewComponent } from './comment-view/comment-view.component';
+// import {MatFormFieldControl} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainViewComponent,
-    InputUserComponent
+    InputUserComponent,
+    CommentViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatFormFieldModule,
-    MatAutocompleteModule
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

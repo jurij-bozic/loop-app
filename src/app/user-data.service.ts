@@ -18,8 +18,12 @@ export class UserDataService {
         email: 'jane.doe@email.com'
       },
       {
-        name: 'WIlliam Shakespeare',
-        email: 'jane.doe@email.com'
+        name: 'William Shakespeare',
+        email: 'william.shakespeare@email.com'
+      },
+      {
+        name: 'Williamm Shakespeare',
+        email: 'williamm.shakespeare@email.com'
       }
     ];
     return data;
