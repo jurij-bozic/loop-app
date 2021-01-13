@@ -27,7 +27,7 @@ export class InputUserComponent implements OnInit {
   constructor(private userDataService: UserDataService, private fb: FormBuilder) { }
 
   add() {
-    this.containers.push(0);
+    // this.containers.push(0);
   }
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class InputUserComponent implements OnInit {
   
     this.myControl.valueChanges.subscribe(user => (this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])] 
       && !this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added ?
-      this.setUserAdded(user) : console.log('NOTHING')));
+      this.setUserAdded(user) : this.setFakeInputValue(user)));
 
 
     //filters users and displays the selected one
@@ -76,13 +76,16 @@ export class InputUserComponent implements OnInit {
   private setUserAdded(user: string): any {
     this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added = true;
     this.userDataService.submissionUsers = this.userDataService.submissionUsers + user;
-    this.setInputValue();
-    console.log(this.userDataService.submissionUsers);
+    // this.setInputValue();
+    this.containers[this.containers.length-1] = {
+      userName: user,
+      nameFinished: true
+    };
   }
 
   public addMoreUsers(): void {
-    this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
-    this.myControl.setValue(this.userDataService.submissionUsers);
+    // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
+    // this.myControl.setValue(this.userDataService.submissionUsers);
   }
 
   public removeUsers(event: any): void {
@@ -92,6 +95,28 @@ export class InputUserComponent implements OnInit {
   private setInputValue(): any {
     this.myControl.setValue(this.userDataService.submissionUsers); 
     
+  }
+
+  private setFakeInputValue(text: string): any {
+    let splitText = text.split(' ');
+
+    // debugger;
+
+    if(this.containers.length == 0 || this.containers[this.containers.length-1].nameFinished){
+      // debugger;
+        this.containers.push({
+          userName: splitText[splitText.length-1],
+          nameFinished: false
+        });
+        console.log(this.containers);
+    
+    }
+    else {
+      this.containers[this.containers.length-1] = {
+        userName: text,
+        nameFinished: false
+      };
+    }
   }
 } 
 

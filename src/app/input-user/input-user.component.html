@@ -15,9 +15,9 @@
                [matAutocomplete]="auto"
                (keyup.Space)="addMoreUsers()"
                (keydown.backspace)="removeUsers($event)">
-               <!-- <div class="fake-input-container users-id">
-                <span class="fake-input" *ngFor="let container of containers"></span>
-               </div> -->
+               <div class="fake-input-container users-id">
+                <span class="fake-input" *ngFor="let container of containers">{{container.userName}}&nbsp;</span>
+               </div>
         </div>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">

@@ -6,20 +6,26 @@
 .users-id {
     margin-top: 1vw;
     padding-left: 2vw;
-    /* color: transparent;
-    user-select: none; */
+    color: transparent;
+    user-select: none;
 }
 
-/* .fake-input {
+.fake-input {
+    padding: 0.8vw;
     z-index: 9;
-    color: black !important;
     user-select: text;
     display:inline-flex;
-} */
+    border-radius: 20px;
+    background-color: rgb(21, 165, 184);
+    color: white !important;
+    font-weight: normal !important;
+    margin-left: 0.2vw;
+    margin-right: 0.2vw;
+}
 
-/* .fake-input-container {
-    margin-top: -2.5vw;
-} */
+.fake-input-container {
+    margin-top: -2.9vw;
+}
 
 mat-label {
     margin-left: 2vw;
@@ -39,7 +45,7 @@ mat-label {
     border-top: 1px solid rgb(223, 223, 223);
     border-bottom: 1px solid rgb(223, 223, 223);
     padding-top: 1vw;
-    height: 7vw;
+    height: 8vw;
 }
 
 #users-matformfield {
