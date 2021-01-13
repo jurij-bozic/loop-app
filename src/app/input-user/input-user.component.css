@@ -2,12 +2,28 @@
     width: 100%;
 }
 
-#users {
-    border-top: 1px solid rgb(223, 223, 223);
-    border-bottom: 1px solid rgb(223, 223, 223);
-    padding-top: 1.5vw;
+
+.users-id {
+    margin-top: 1vw;
+    padding-left: 2vw;
+    /* color: transparent;
+    user-select: none; */
 }
 
+/* .fake-input {
+    z-index: 9;
+    color: black !important;
+    user-select: text;
+    display:inline-flex;
+} */
+
+/* .fake-input-container {
+    margin-top: -2.5vw;
+} */
+
+mat-label {
+    margin-left: 2vw;
+}
 
 #subject-field {
     font-size: large;
@@ -18,9 +34,18 @@
     width: 95%;
 }
 
-mat-form-field {
-    padding-left: 1vw;
+#users-input {
+    width: 100% !important;
+    border-top: 1px solid rgb(223, 223, 223);
+    border-bottom: 1px solid rgb(223, 223, 223);
+    padding-top: 1vw;
+    height: 7vw;
+}
+
+#users-matformfield {
+    margin-top: -2vw !important;
     padding-right: 1vw;
+    width: 100% !important;
 }
 
 mat-label {
@@ -41,6 +66,7 @@ mat-label {
     margin-bottom: -15px;
     font-weight: 500;
     font-size: 2vw;
+    pointer-events: none;
 }
 
 .dropdown-list-email {
@@ -49,4 +75,5 @@ mat-label {
     font-size: small;
     font-weight: normal;
 }
+
 

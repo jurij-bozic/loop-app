@@ -8,14 +8,13 @@
     </p>    
 </div>
 
-    <!-- <form #f="ngForm" (ngSubmit)="logThis(f.value)"> -->
     <form [formGroup]="myForm">
-        <mat-form-field>
+        <mat-form-field id="comment-mat-form" appearance="none">
             <div class='basic-form-container'>
-                <input class="comment-input" type="text" placeholder="Add a comment...">
+                <input matInput formControlName="comment" class="comment-input" type="text" placeholder="Add a comment...">
             </div>
             <div class="btn-container">
-                <button id="share-btn" type="submit">Share</button>
+                <button id="share-btn" type="submit" (click)="logThis()">Share</button>
             </div>
         </mat-form-field>
     </form>

@@ -24,6 +24,10 @@ p {
     padding: 1vw; 
 }
 
+#comment-mat-form {
+    width: 100% !important;
+}
+
 .basic-form-container {
     border: 1px solid rgb(223, 223, 223);
     border-radius: 4px;
@@ -34,7 +38,7 @@ p {
 .comment-input {
     border: none;
     padding: 1vw;
-    width: 90%;
+    width: 90% !important;
     font-size: 2vw;
 }
 

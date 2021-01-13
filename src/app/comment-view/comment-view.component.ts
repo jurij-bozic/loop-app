@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import {NgForm} from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserDataService } from '../user-data.service';
 
 
 @Component({
@@ -11,22 +11,24 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CommentViewComponent implements OnInit {
 
   myForm: FormGroup;
+  testVar: string;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userDataService: UserDataService) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      name: '',
-      email: ''
+      comment: ''
     })
-
-    this.myForm.valueChanges.subscribe(console.log);
+    //saves comment values to service
+    this.myForm.valueChanges.subscribe(item => this.userDataService.submissionComment = item.comment);
+    
   }
 
-  logThis(param: any): void {
-    // debugger;
-    console.log(param);
+  logThis(): void {
+    console.log(this.userDataService.submissionSubject + ' to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment);
   }
 
 }
+
+

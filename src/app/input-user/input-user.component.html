@@ -1,17 +1,24 @@
-<div>
-  <input id="subject-field" type="text" placeholder="Enter subject">
-</div>
+<form id="users" class="user-form" [formGroup]="myMainForm">
+<!-- ****************************************************************** -->
 
-    <form id="users" class="user-form">
-      <mat-form-field class="user-form" appearance="none">
-        <mat-label>Share email with your teammates</mat-label>
-        <input id="users-id"
+      <input matInput formControlName="subject" id="subject-field" type="text" placeholder="Enter subject">
+      
+      <mat-form-field id="users-matformfield" appearance="none">
+        <div id="users-input">
+          <mat-label>Share email with your teammates</mat-label>
+          <input class="users-id"
                type="text"
                placeholder="Type name or email"
                aria-label="Number"
                matInput
                [formControl]="myControl"
-               [matAutocomplete]="auto">
+               [matAutocomplete]="auto"
+               (keyup.Space)="addMoreUsers()"
+               (keydown.backspace)="removeUsers($event)">
+               <!-- <div class="fake-input-container users-id">
+                <span class="fake-input" *ngFor="let container of containers"></span>
+               </div> -->
+        </div>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
           <span class="dropdown-list"> {{user.name}} </span> 
@@ -19,16 +26,20 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-    </form>
-
+     
+<!-- ****************************************************************** -->
+</form>
+<!-- <button (click)="add()">Add</button> -->
     <br><br>
     
 
-
-
+ 
+<!-- [value]="user.name"  -->
   
     
 
-  
+<!-- (click)="setInputValue($event.target.firstChild.textContent)" -->
+
+<!-- (click)="setInputValue()" -->
   
   
