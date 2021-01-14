@@ -48,7 +48,7 @@ export class InputUserComponent implements OnInit {
   }
 
   private filterSearch(item: string): Data[] {
-    let filterKey = item.toLowerCase();
+    let filterKey = (item[0] == ' ' ? item.trim().toLowerCase() : item.toLowerCase());
     let splitFilterKey = filterKey.split(', ');
 
     if(splitFilterKey[splitFilterKey.length-1]){
@@ -71,7 +71,7 @@ export class InputUserComponent implements OnInit {
 
   private setUserAdded(user: string): any {
     this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added = true;
-    this.userDataService.submissionUsers = this.userDataService.submissionUsers + user;
+    this.userDataService.submissionUsers = (this.userDataService.submissionUsers  ? this.userDataService.submissionUsers + ', ' + user : this.userDataService.submissionUsers  + user);
     this.setInputValue();
     this.selectedUsers[this.selectedUsers.length-1] = {
       userName: user,
@@ -79,16 +79,16 @@ export class InputUserComponent implements OnInit {
     };
   }
 
-  public addMoreUsers(): void {
-    if(this.userDataService.submissionUsers.slice(-2) == ', '){
-      this.userDataService.submissionUsers = this.userDataService.submissionUsers + ' ';
-      this.myControl.setValue(this.userDataService.submissionUsers);
-    }
-    else {
-      this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
-      this.myControl.setValue(this.userDataService.submissionUsers);
-    }
-  }
+  // public addMoreUsers(): void {
+  //   // if(this.userDataService.submissionUsers.slice(-2) == ', '){
+  //     // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ' ';
+  //     // this.myControl.setValue(this.userDataService.submissionUsers);
+  //   // }
+  //   // else {
+  //     // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
+  //     // this.myControl.setValue(this.userDataService.submissionUsers);
+  //   // }
+  // }
 
   public removeUsers(event: any): void {
     // console.log(event);
@@ -96,18 +96,18 @@ export class InputUserComponent implements OnInit {
 
   private setInputValue(): any {
     // this.myControl.setValue(this.userDataService.submissionUsers); 
-    this.myControl.setValue(' '.repeat(this.userDataService.submissionUsers.length)); 
-    // this.myControl.setValue(''); 
+    // this.myControl.setValue(' '.repeat(this.userDataService.submissionUsers.length)); 
+    this.myControl.setValue(''); 
     
   }
 
   private setFakeInputValue(text: string): any {
     let splitText = text.split(', ');
 
-    // if(text.trim() == ''){
-    //   return;
+    // if(text.trim() !== ''){
+    //   text.trim
     // }
-    // debugger;
+   
 
     if(this.selectedUsers.length == 0 || this.selectedUsers[this.selectedUsers.length-1].nameFinished){
       // debugger;

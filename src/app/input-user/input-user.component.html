@@ -12,8 +12,7 @@
                aria-label="Number"
                matInput
                [formControl]="myControl"
-               [matAutocomplete]="auto"
-               (keyup.Space)="addMoreUsers()">
+               [matAutocomplete]="auto">
             
                 <div class="fake-input-container users-id">
                   <span [class.fake-input-selected]="user.nameFinished === true" 

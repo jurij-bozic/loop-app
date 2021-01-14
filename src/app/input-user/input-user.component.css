@@ -8,7 +8,7 @@
     padding-left: 2vw;
     color: transparent;
     user-select: none;
-    /* caret-color: transparent; */
+    caret-color: transparent;
 }
 
 .fake-input {

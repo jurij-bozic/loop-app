@@ -32,7 +32,7 @@ export class CommentViewComponent implements OnInit {
   }
 
   submitMessage() {
-    if(confirm(this.userDataService.submissionSubject + ' to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment)) {
+    if(confirm('MESSAGE with subject' + this.userDataService.submissionSubject +  'sent to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment)) {
       console.log("Message shared");
     }
   }

@@ -33,8 +33,38 @@ export class UserDataService {
         added: false
       },
       {
-        name: 'Williamm Shakespeare',
-        email: 'williamm.shakespeare@email.com',
+        name: 'John Dryden',
+        email: 'john.dryden@email.com',
+        added: false
+      },
+      {
+        name: 'Alan Turing',
+        email: 'alan.Turing@email.com',
+        added: false
+      },
+      {
+        name: 'Alonzo Church',
+        email: 'alonzo.church@email.com',
+        added: false
+      },
+      {
+        name: 'Noam Chomsky',
+        email: 'alonzo.church@email.com',
+        added: false
+      },
+      {
+        name: 'James Joyce',
+        email: 'james.joyce@email.com',
+        added: false
+      },
+      {
+        name: 'Richard Montague',
+        email: 'richard.montague@email.com',
+        added: false
+      },
+      {
+        name: 'Rene Descartes',
+        email: 'rene.Descartes@email.com',
         added: false
       }
     ];

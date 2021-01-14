@@ -8,11 +8,16 @@
 
 .previous-sender {
     font-weight: bold;
+    text-align: left;
+    width: 100%;
 }
 
 .previous-addressees {
     color: grey;
     margin-bottom: 1vw;
+    width: 100%;
+    text-align: left;
+
 }
 
 p {
@@ -64,5 +69,38 @@ p {
 .btn-container {
     text-align: right;
     padding-bottom: 2vw;
+}
+
+.prev-sender-container {
+    display: flex;
+    width: 100%;
+}
+
+.time {
+    text-align: right;
+    width: 100%;
+    color: grey;
+}
+
+.number-of-adr {
+    width: 1.8vw;
+    height: 2.5vw;
+    text-align: center;
+    border: 0.4px solid rgb(175, 175, 175);
+    border-radius: 2px;
+    color: grey;
+    display: grid;
+
+}
+
+.prev-adr-container {
+    display: flex;
+    width: 100%;
+}
+
+.inner-number {
+
+    font-size: 2vw;
+    line-height: 2.5vw;
 }
 
