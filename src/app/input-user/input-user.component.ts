@@ -21,22 +21,18 @@ export class InputUserComponent implements OnInit {
   subject: Observable<string>;
   addedUser: string;
   isFirstSearch: boolean = true;
-  containers = [];
+  selectedUsers = [];
 
 
   constructor(private userDataService: UserDataService, private fb: FormBuilder) { }
 
-  add() {
-    // this.containers.push(0);
-  }
 
   ngOnInit(): void {
-    this.userDataService.submissionUsers = '';
     //saves subject value to service
     this.myMainForm = this.fb.group({
       subject: ''
     })
-    this.myMainForm.valueChanges.subscribe(item => this.userDataService.submissionSubject = this.userDataService.submissionSubject + item.subject);
+    this.myMainForm.valueChanges.subscribe(item => this.userDataService.submissionSubject = item.subject);
   
     this.myControl.valueChanges.subscribe(user => (this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])] 
       && !this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added ?
@@ -76,49 +72,62 @@ export class InputUserComponent implements OnInit {
   private setUserAdded(user: string): any {
     this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added = true;
     this.userDataService.submissionUsers = this.userDataService.submissionUsers + user;
-    // this.setInputValue();
-    this.containers[this.containers.length-1] = {
+    this.setInputValue();
+    this.selectedUsers[this.selectedUsers.length-1] = {
       userName: user,
       nameFinished: true
     };
   }
 
   public addMoreUsers(): void {
-    // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
-    // this.myControl.setValue(this.userDataService.submissionUsers);
+    if(this.userDataService.submissionUsers.slice(-2) == ', '){
+      this.userDataService.submissionUsers = this.userDataService.submissionUsers + ' ';
+      this.myControl.setValue(this.userDataService.submissionUsers);
+    }
+    else {
+      this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
+      this.myControl.setValue(this.userDataService.submissionUsers);
+    }
   }
 
   public removeUsers(event: any): void {
-    console.log(event);
+    // console.log(event);
   }
 
   private setInputValue(): any {
-    this.myControl.setValue(this.userDataService.submissionUsers); 
+    // this.myControl.setValue(this.userDataService.submissionUsers); 
+    this.myControl.setValue(' '.repeat(this.userDataService.submissionUsers.length)); 
+    // this.myControl.setValue(''); 
     
   }
 
   private setFakeInputValue(text: string): any {
-    let splitText = text.split(' ');
+    let splitText = text.split(', ');
 
+    // if(text.trim() == ''){
+    //   return;
+    // }
     // debugger;
 
-    if(this.containers.length == 0 || this.containers[this.containers.length-1].nameFinished){
+    if(this.selectedUsers.length == 0 || this.selectedUsers[this.selectedUsers.length-1].nameFinished){
       // debugger;
-        this.containers.push({
+        this.selectedUsers.push({
           userName: splitText[splitText.length-1],
           nameFinished: false
         });
-        console.log(this.containers);
+        console.log(this.selectedUsers);
     
     }
     else {
-      this.containers[this.containers.length-1] = {
-        userName: text,
+      this.selectedUsers[this.selectedUsers.length-1] = {
+        userName: splitText[splitText.length-1].trim(),
         nameFinished: false
       };
     }
   }
 } 
+
+
 
 
 

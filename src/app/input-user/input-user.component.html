@@ -6,18 +6,25 @@
       <mat-form-field id="users-matformfield" appearance="none">
         <div id="users-input">
           <mat-label>Share email with your teammates</mat-label>
-          <input class="users-id"
+          <input class="users-id" 
                type="text"
                placeholder="Type name or email"
                aria-label="Number"
                matInput
                [formControl]="myControl"
                [matAutocomplete]="auto"
-               (keyup.Space)="addMoreUsers()"
-               (keydown.backspace)="removeUsers($event)">
-               <div class="fake-input-container users-id">
-                <span class="fake-input" *ngFor="let container of containers">{{container.userName}}&nbsp;</span>
-               </div>
+               (keyup.Space)="addMoreUsers()">
+            
+                <div class="fake-input-container users-id">
+                  <span [class.fake-input-selected]="user.nameFinished === true" 
+                      class="fake-input" 
+                      *ngFor="let user of selectedUsers">
+                      {{user.userName}}&nbsp; 
+                  </span>
+                </div> 
+                 
+                
+
         </div>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
@@ -41,5 +48,7 @@
 <!-- (click)="setInputValue($event.target.firstChild.textContent)" -->
 
 <!-- (click)="setInputValue()" -->
+
+<!-- (keydown.backspace)="removeUsers($event)" -->
   
   

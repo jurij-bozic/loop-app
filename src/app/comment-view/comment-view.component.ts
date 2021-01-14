@@ -8,6 +8,8 @@ import { UserDataService } from '../user-data.service';
   templateUrl: './comment-view.component.html',
   styleUrls: ['./comment-view.component.css']
 })
+
+
 export class CommentViewComponent implements OnInit {
 
   myForm: FormGroup;
@@ -27,6 +29,12 @@ export class CommentViewComponent implements OnInit {
 
   logThis(): void {
     console.log(this.userDataService.submissionSubject + ' to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment);
+  }
+
+  submitMessage() {
+    if(confirm(this.userDataService.submissionSubject + ' to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment)) {
+      console.log("Message shared");
+    }
   }
 
 }

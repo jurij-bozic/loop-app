@@ -7,8 +7,8 @@ import {Observable} from 'rxjs';
 })
 export class UserDataService {
 
-  submissionSubject: string;
-  submissionUsers: string;
+  submissionSubject: string = '';
+  submissionUsers: string = '';
   submissionComment: string;
 
   
