@@ -35,9 +35,6 @@ export class InputUserComponent implements OnInit {
     this.filteredUsers = this.getFilteredUser();
 
     this.parseUser();
-
-
-
   }
 
   private filterSearch(item: string): Data[] {
@@ -78,7 +75,6 @@ export class InputUserComponent implements OnInit {
     this.setUserAdded(user) : this.setFakeInputValue(user)));
   }
 
-
   private setInputValue(): any {
     this.myControl.setValue(' '); 
     
@@ -88,13 +84,10 @@ export class InputUserComponent implements OnInit {
     let splitText = text.split(', ');
 
     if(this.selectedUsers.length == 0 || this.selectedUsers[this.selectedUsers.length-1].nameFinished){
-      // debugger;
         this.selectedUsers.push({
           userName: splitText[splitText.length-1],
           nameFinished: false
         });
-        console.log(this.selectedUsers);
-    
     }
     else {
       this.selectedUsers[this.selectedUsers.length-1] = {

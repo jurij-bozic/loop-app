@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --cyan: rgb(21, 165, 184);
+    --light-grey: rgb(223, 223, 223);
+    --green-hover: rgb(15, 72, 80);
+    --violet: rgb(67, 27, 112);
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
