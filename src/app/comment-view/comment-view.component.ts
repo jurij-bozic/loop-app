@@ -13,8 +13,6 @@ import { UserDataService } from '../user-data.service';
 export class CommentViewComponent implements OnInit {
 
   myForm: FormGroup;
-  testVar: string;
-
 
   constructor(private fb: FormBuilder, private userDataService: UserDataService) { }
 
@@ -25,10 +23,6 @@ export class CommentViewComponent implements OnInit {
     //saves comment values to service
     this.myForm.valueChanges.subscribe(item => this.userDataService.submissionComment = item.comment);
     
-  }
-
-  logThis(): void {
-    console.log(this.userDataService.submissionSubject + ' to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment);
   }
 
   submitMessage() {

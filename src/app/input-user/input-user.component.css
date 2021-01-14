@@ -35,7 +35,12 @@
 }
 
 .fake-input-container {
+    width: 100%;
     margin-top: -2.5vw;
+    font-size: normal;
+    overflow-x: auto;
+    white-space: nowrap;
+    
 }
 /* 
 .parent-fake-input-container {
@@ -68,7 +73,7 @@ mat-label {
     border-top: 1px solid rgb(223, 223, 223);
     border-bottom: 1px solid rgb(223, 223, 223);
     padding-top: 1vw;
-    height: 8vw;
+    height: 4em;
 }
 
 #users-matformfield {
@@ -79,11 +84,11 @@ mat-label {
 
 mat-label {
     color: grey;
-    font-size: 2vw;
+    font-size: normal;
 }
 
 .mat-option {
-    height: 6vw !important;
+    height: 3em !important;
     margin-bottom: 1vw;
     margin-bottom: 1vw;
 
@@ -91,15 +96,15 @@ mat-label {
 
 .dropdown-list {
     display: block;
-    margin-top: -12px;
-    margin-bottom: -15px;
-    font-weight: 500;
-    font-size: 2vw;
+    /* margin-top: -12px;
+    margin-bottom: -15px; */
+    font-weight: 450;
+    font-size: normal;
     pointer-events: none;
 }
 
 .dropdown-list-email {
-    margin-top: -3.8vw !important;
+    margin-top: -1.8em !important;
     color: grey;
     font-size: small;
     font-weight: normal;

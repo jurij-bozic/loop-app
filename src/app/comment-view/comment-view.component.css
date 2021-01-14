@@ -44,18 +44,18 @@ p {
     border: none;
     padding: 1vw;
     width: 90% !important;
-    font-size: 2vw;
+    font-size: normal;
 }
 
 #share-btn {
     margin-left: 2vw;
     margin-right: 2vw;
-    width: 20vw;
-    height: 4vw;
+    width: 15vh;
+    height: 2.2em;
     border-radius: 20px;
     background-color: rgb(21, 165, 184);
     color: white;
-    font-size: 2vw;
+    font-size: medium;
     border: none;
 }
 
@@ -83,13 +83,14 @@ p {
 }
 
 .number-of-adr {
-    width: 1.8vw;
-    height: 2.5vw;
+    width: 1.2em;
+    height: 1.2em;
     text-align: center;
     border: 0.4px solid rgb(175, 175, 175);
     border-radius: 2px;
     color: grey;
     display: grid;
+    font-size: normal;
 
 }
 
@@ -100,7 +101,7 @@ p {
 
 .inner-number {
 
-    font-size: 2vw;
-    line-height: 2.5vw;
+    font-size: normal;
+    line-height: 1.2em;
 }
 

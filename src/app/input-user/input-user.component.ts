@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { Data } from '../model/data';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map }  from 'rxjs/operators';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 
@@ -16,11 +16,7 @@ export class InputUserComponent implements OnInit {
   myMainForm: FormGroup;
   data: Data[];
   myControl = new FormControl();
-  myControl2 = new FormControl();
   filteredUsers: Observable<Data[]>;
-  subject: Observable<string>;
-  addedUser: string;
-  isFirstSearch: boolean = true;
   selectedUsers = [];
 
 
@@ -34,14 +30,11 @@ export class InputUserComponent implements OnInit {
     })
     this.myMainForm.valueChanges.subscribe(item => this.userDataService.submissionSubject = item.subject);
   
-    this.myControl.valueChanges.subscribe(user => (this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])] 
-      && !this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added ?
-      this.setUserAdded(user) : this.setFakeInputValue(user)));
-
-
     //filters users and displays the selected one
     this.data = this.userDataService.getData();
     this.filteredUsers = this.getFilteredUser();
+
+    this.parseUser();
 
 
 
@@ -79,35 +72,20 @@ export class InputUserComponent implements OnInit {
     };
   }
 
-  // public addMoreUsers(): void {
-  //   // if(this.userDataService.submissionUsers.slice(-2) == ', '){
-  //     // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ' ';
-  //     // this.myControl.setValue(this.userDataService.submissionUsers);
-  //   // }
-  //   // else {
-  //     // this.userDataService.submissionUsers = this.userDataService.submissionUsers + ', ';
-  //     // this.myControl.setValue(this.userDataService.submissionUsers);
-  //   // }
-  // }
-
-  public removeUsers(event: any): void {
-    // console.log(event);
+  private parseUser(): void {
+    this.myControl.valueChanges.subscribe(user => (this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])] 
+    && !this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added ?
+    this.setUserAdded(user) : this.setFakeInputValue(user)));
   }
 
+
   private setInputValue(): any {
-    // this.myControl.setValue(this.userDataService.submissionUsers); 
-    // this.myControl.setValue(' '.repeat(this.userDataService.submissionUsers.length)); 
-    this.myControl.setValue(''); 
+    this.myControl.setValue(' '); 
     
   }
 
   private setFakeInputValue(text: string): any {
     let splitText = text.split(', ');
-
-    // if(text.trim() !== ''){
-    //   text.trim
-    // }
-   
 
     if(this.selectedUsers.length == 0 || this.selectedUsers[this.selectedUsers.length-1].nameFinished){
       // debugger;

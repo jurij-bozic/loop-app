@@ -16,6 +16,4 @@ export class MainViewComponent implements OnInit {
     console.log(this.userDataService.getData());
   }
 
-
-
 }
