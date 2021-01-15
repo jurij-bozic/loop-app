@@ -8,9 +8,9 @@ import { InputUserComponent } from './input-user/input-user.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommentViewComponent } from './comment-view/comment-view.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 // import {MatFormFieldControl} from '@angular/material';
 
 @NgModule({
@@ -26,9 +26,9 @@ import { CommentViewComponent } from './comment-view/comment-view.component';
     NoopAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CommentViewComponent } from './comment-view.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('CommentViewComponent', () => {
   let component: CommentViewComponent;
@@ -8,7 +8,10 @@ describe('CommentViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommentViewComponent ]
+      declarations: [ CommentViewComponent ],
+      providers: [
+        FormBuilder
+      ]
     })
     .compileComponents();
   });
