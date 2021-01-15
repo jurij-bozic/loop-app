@@ -9,3 +9,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Before running Dev server
 
 Since the `node_modules` file is not inclued in the repository, first run `npm i` and only after that `ng serve`.
+
+## Angular packages
+
+The following Angular packages may need to be installed in order to run the app: `ng add @angular/material`, `ng add @angular/forms`.
