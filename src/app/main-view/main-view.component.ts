@@ -13,6 +13,7 @@ export class MainViewComponent implements OnInit {
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit(): void {
+    //added for testing
     console.log(this.userDataService.getData());
   }
 

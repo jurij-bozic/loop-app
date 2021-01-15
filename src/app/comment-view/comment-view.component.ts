@@ -20,17 +20,20 @@ export class CommentViewComponent implements OnInit {
     this.myForm = this.fb.group({
       comment: ''
     })
-    //saves comment values to service
+    //saves comment value to service
     this.myForm.valueChanges.subscribe(item => this.userDataService.submissionComment = item.comment);
-    
   }
 
+  
   submitMessage() {
-    if(confirm('MESSAGE with subject' + this.userDataService.submissionSubject +  'sent to ' + this.userDataService.submissionUsers + ': ' + this.userDataService.submissionComment)) {
-      console.log("Message shared");
+    if(!this.userDataService.submissionSubject || !this.userDataService.submissionUsers || !this.userDataService.submissionComment){
+      confirm('Please fill out all fields before sharing the message.');
+    }
+    else {
+      confirm('The following message has been sent.\n\n\n' + 'SUBJECT: ' + this.userDataService.submissionSubject + '\n\n' +  'SENT TO: ' + 
+          this.userDataService.submissionUsers + '\n\n' + 'MESSAGE: ' + this.userDataService.submissionComment);
     }
   }
-
 }
 
 

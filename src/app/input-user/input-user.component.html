@@ -1,8 +1,5 @@
 <form id="users" class="user-form" [formGroup]="myMainForm">
-<!-- ****************************************************************** -->
-
       <input matInput formControlName="subject" id="subject-field" type="text" placeholder="Enter subject">
-      
       <mat-form-field id="users-matformfield" appearance="none">
         <div id="users-input">
           <mat-label>Share email with your teammates</mat-label>
@@ -14,16 +11,14 @@
                [formControl]="myControl"
                [matAutocomplete]="auto">
             
-                <div class="fake-input-container users-id">
+               <!-- fake input/overlay div that displays what is entered in actual input -->
+                <div contenteditable="true" class="fake-input-container users-id">
                   <span [class.fake-input-selected]="user.nameFinished === true" 
                       class="fake-input" 
                       *ngFor="let user of selectedUsers">
                       {{user.userName}}&nbsp; 
                   </span>
                 </div> 
-                 
-                
-
         </div>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
@@ -32,22 +27,10 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-     
-<!-- ****************************************************************** -->
 </form>
-<!-- <button (click)="add()">Add</button> -->
-    <br><br>
+<br><br>
     
 
- 
-<!-- [value]="user.name"  -->
-  
-    
 
-<!-- (click)="setInputValue($event.target.firstChild.textContent)" -->
-
-<!-- (click)="setInputValue()" -->
-
-<!-- (keydown.backspace)="removeUsers($event)" -->
   
   

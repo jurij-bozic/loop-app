@@ -64,16 +64,10 @@ export class UserDataService {
       },
       {
         name: 'Rene Descartes',
-        email: 'rene.Descartes@email.com',
+        email: 'rene.descartes@email.com',
         added: false
       }
     ];
     return data;
-  }
-
-  public submissionDataSet(users, comment){
-        this.submissionUsers = users;
-        this.submissionComment = comment;
- 
   }
 }

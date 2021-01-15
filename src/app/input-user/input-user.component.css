@@ -77,8 +77,6 @@ mat-label {
 
 .dropdown-list {
     display: block;
-    /* margin-top: -12px;
-    margin-bottom: -15px; */
     font-weight: 450;
     font-size: normal;
     pointer-events: none;
