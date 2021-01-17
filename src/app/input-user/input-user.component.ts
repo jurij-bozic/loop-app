@@ -60,7 +60,7 @@ export class InputUserComponent implements OnInit {
     return this.data.filter(user => ((user.name.toLowerCase().indexOf(filterKey) === 0) || (user.name.split(' ')[1].toLowerCase().indexOf(filterKey) === 0)) && !user.added);
   }
 
-  private parseUser(): void {
+  public parseUser(): void {
     this.myControl.valueChanges.subscribe(user => (this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])] 
       && !this.data[this.data.indexOf(this.data.filter(item => item.name == user)[0])].added ?
       //adds user to data service or shows input strings in fake input/overlay div

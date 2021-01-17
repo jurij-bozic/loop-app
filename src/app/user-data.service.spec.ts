@@ -12,4 +12,12 @@ describe('UserDataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  //tests whether the email field in the data has the correct form
+  it('should contain a valid e-mail address with `@`', () => {
+    service.getData().map(item => 
+      expect(item.email).toContain('@')
+    );
+  })
 });
+

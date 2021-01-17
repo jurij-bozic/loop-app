@@ -27,4 +27,16 @@ describe('InputUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //tests parsing existing Users from input text
+  it('input text should have nameFinished=true only if parsed as User', () => {
+    let testText = 'TestTest'
+    let testDataValue = '';
+    component.data.map(item => 
+      (item.name == testText ? testDataValue = item.name : testDataValue = ''));
+    component.myControl.setValue(testText); 
+    component.parseUser();
+
+    expect(component.selectedUsers[0].nameFinished).toBe(false) && expect(testDataValue).toBe('');
+  });
 });
